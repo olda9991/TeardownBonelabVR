@@ -10143,6 +10143,7 @@ function tick(dt)
     -- A quickload re-runs this file (file-level locals reset) without calling init() again.
     if not B then init() end
     heartbeat = heartbeat + 1
+    if BONELAB and BONELAB.tick then pcall(BONELAB.tick) end
     W(L_HEARTBEAT, heartbeat)
     -- v0.6 review N1: no "near / holding" survives a tick that fails before updateHandPhysics publishes it (native reads
     -- between ticks: a completed tick still publishes its final value, a Lua error leaves 0 and the grips go to the game)
@@ -10509,5 +10510,14 @@ function bonelab_init()
 end
 
 function draw()
+    if BONELAB and BONELAB.drawVRMenu then
+        local paused = GetBool and GetBool("game.paused")
+        local path = GetString and GetString("level.path") or ""
+        if paused or path == "" then pcall(BONELAB.drawVRMenu) end
+    end
     -- draw VR UI in world space if in VR
 end
+
+-- Load bonelab core
+dofile("MOD/bonelab_core.lua")
+if BONELAB and BONELAB.init then pcall(BONELAB.init) end
