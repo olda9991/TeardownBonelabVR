@@ -1,0 +1,4 @@
+name = Teardown VR Mod
+author = markos12900-beep (with Claude)
+description = Lua part of Teardown VR Mod, an experimental VR mod for Teardown (tested with a Meta Quest 3 through SteamVR). It needs the native part too: dxgi.dll in the game folder, from the GitHub release. Moves the camera with your headset, aims with your controller, shows the held tool in your hand (the game's own tool models) and both hands as blocky hands or voxel gloves, shows your character's body and legs when you look down, lets your hands grab, throw and push objects, and helps you jump with A. Version 0.22. Does nothing on its own without the native part. Single-player only.
+tags = Gameplay
