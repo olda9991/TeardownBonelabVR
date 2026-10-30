@@ -10502,3 +10502,12 @@ function draw()
             PM.kidsN, BC.src[1], BC.src[2]))
     end
 end
+
+-- BonelabVR additions
+function bonelab_init()
+    -- placeholder for bonelab style features
+end
+
+function draw()
+    -- draw VR UI in world space if in VR
+end
